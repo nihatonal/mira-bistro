@@ -1,50 +1,66 @@
-'use client';
+"use client";
 
-import { useMemo, useState } from 'react';
-import { useTranslations } from 'next-intl';
+import { useMemo, useState } from "react";
+import { useTranslations } from "next-intl";
 
-import {
-  menuCategories,
-  menuItems,
-  type MenuCategory,
-} from '@/data/menu-items';
+import { type Locale } from "@/i18n";
 
-import { type Locale } from '@/i18n';
+import { Container } from "@/components/layout/Container";
+import { MenuCategoryFilter } from "@/components/menu/MenuCategoryFilter";
+import { MenuItemCard } from "@/components/menu/MenuItemCard";
+import { Reveal } from "@/components/ui/Reveal";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 
-import { Container } from '@/components/layout/Container';
-import { MenuCategoryFilter } from '@/components/menu/MenuCategoryFilter';
-import { MenuItemCard } from '@/components/menu/MenuItemCard';
-import { Reveal } from '@/components/ui/Reveal';
-import { SectionHeading } from '@/components/ui/SectionHeading';
+type MenuCategory = {
+  id: string;
+  slug: string;
+  name: Record<Locale, string>;
+};
+
+type MenuProduct = {
+  id: string;
+  slug: string;
+  categorySlug: string;
+  name: Record<Locale, string>;
+  description: Record<Locale, string>;
+  image: string;
+  priceTry: number;
+  priceUsd: number;
+  preparationMinutes: number;
+  portionCount: number;
+  isVegetarian?: boolean;
+  isVegan?: boolean;
+  isGlutenFree?: boolean;
+};
 
 type MenuPageClientProps = {
   locale: Locale;
+  categories: MenuCategory[];
+  products: MenuProduct[];
 };
 
-export function MenuPageClient({ locale }: MenuPageClientProps) {
-  const t = useTranslations('menuPage');
+export function MenuPageClient({
+  locale,
+  categories,
+  products,
+}: MenuPageClientProps) {
+  const t = useTranslations("menuPage");
 
-  const [activeCategory, setActiveCategory] = useState<MenuCategory | 'all'>(
-    'all'
-  );
+  const [activeCategory, setActiveCategory] = useState<string>("all");
 
   const filteredItems = useMemo(() => {
-    if (activeCategory === 'all') {
-      return menuItems;
+    if (activeCategory === "all") {
+      return products;
     }
 
-    return menuItems.filter((item) => item.category === activeCategory);
-  }, [activeCategory]);
+    return products.filter((item) => item.categorySlug === activeCategory);
+  }, [activeCategory, products]);
 
-  const categoryLabels: Record<MenuCategory | 'all', string> = {
-    all: t('all'),
-    starters: t('starters'),
-    salads: t('salads'),
-    mains: t('mains'),
-    burgers: t('burgers'),
-    pasta: t('pasta'),
-    desserts: t('desserts'),
-    drinks: t('drinks'),
+  const categoryLabels = {
+    all: t("all"),
+    ...Object.fromEntries(
+      categories.map((category) => [category.slug, category.name[locale]]),
+    ),
   };
 
   return (
@@ -53,16 +69,16 @@ export function MenuPageClient({ locale }: MenuPageClientProps) {
         <Reveal>
           <SectionHeading
             centered
-            label={t('label')}
-            title={t('title')}
-            description={t('description')}
+            label={t("label")}
+            title={t("title")}
+            description={t("description")}
           />
         </Reveal>
 
         <Reveal delay={0.1}>
           <div className="mt-12">
             <MenuCategoryFilter
-              categories={menuCategories}
+              categories={categories.map((category) => category.slug)}
               activeCategory={activeCategory}
               onChange={setActiveCategory}
               labels={categoryLabels}

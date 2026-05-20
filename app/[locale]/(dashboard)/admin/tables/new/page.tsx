@@ -29,6 +29,7 @@ export default async function NewTablePage({
       <AdminHeader
         title={t('addTitle')}
         description={t('addDescription')}
+        locale={locale as Locale}
       />
 
       <TableForm

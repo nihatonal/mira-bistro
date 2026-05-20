@@ -25,7 +25,11 @@ export default async function NewCategoryPage({
 
   return (
     <>
-      <AdminHeader title={t("addTitle")} description={t("addDescription")} />
+      <AdminHeader
+        title={t("addTitle")}
+        description={t("addDescription")}
+        locale={locale as Locale}
+      />
 
       <CategoryForm
         locale={locale as Locale}

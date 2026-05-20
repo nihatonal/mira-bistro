@@ -57,7 +57,7 @@ export default async function AdminCategoriesPage({
 
   return (
     <>
-      <AdminHeader title={t("title")} description={t("description")} />
+      <AdminHeader title={t("title")} description={t("description")}   locale={locale as Locale}/>
 
       <main className="flex-1 p-6 lg:p-10">
         <div className="admin-card p-6">

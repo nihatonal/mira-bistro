@@ -54,6 +54,7 @@ export default async function EditTablePage({
       <AdminHeader
         title={t('editTitle')}
         description={t('editDescription')}
+        locale={locale as Locale}
       />
 
       <TableForm

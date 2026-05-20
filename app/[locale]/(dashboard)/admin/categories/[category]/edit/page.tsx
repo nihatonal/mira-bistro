@@ -1,11 +1,11 @@
-import { notFound } from 'next/navigation';
-import { getTranslations } from 'next-intl/server';
+import { notFound } from "next/navigation";
+import { getTranslations } from "next-intl/server";
 
-import { AdminHeader } from '@/components/admin/AdminHeader';
-import { CategoryForm } from '@/components/admin/categories/CategoryForm';
-import { createSupabaseServerClient } from '@/lib/supabase/server';
-import { type Locale } from '@/i18n';
-import { updateCategoryAction } from '../../actions';
+import { AdminHeader } from "@/components/admin/AdminHeader";
+import { CategoryForm } from "@/components/admin/categories/CategoryForm";
+import { createSupabaseServerClient } from "@/lib/supabase/server";
+import { type Locale } from "@/i18n";
+import { updateCategoryAction } from "../../actions";
 
 type EditCategoryPageProps = {
   params: Promise<{
@@ -21,15 +21,15 @@ export default async function EditCategoryPage({
 
   const t = await getTranslations({
     locale,
-    namespace: 'admin.categories.form',
+    namespace: "admin.categories.form",
   });
 
   const supabase = await createSupabaseServerClient();
 
   const { data, error } = await supabase
-    .from('categories')
-    .select('*')
-    .eq('slug', category)
+    .from("categories")
+    .select("*")
+    .eq("slug", category)
     .single();
 
   if (error || !data) notFound();
@@ -56,8 +56,9 @@ export default async function EditCategoryPage({
   return (
     <>
       <AdminHeader
-        title={t('editTitle')}
-        description={t('editDescription')}
+        title={t("editTitle")}
+        description={t("editDescription")}
+        locale={locale as Locale}
       />
 
       <CategoryForm

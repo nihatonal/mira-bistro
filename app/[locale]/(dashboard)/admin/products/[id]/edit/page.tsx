@@ -41,7 +41,8 @@ export default async function EditProductPage({
       description_en,
       description_ru,
       image_url,
-      price,
+      price_try,
+  price_usd,
       preparation_minutes,
       portion_count,
       is_featured,
@@ -77,7 +78,8 @@ export default async function EditProductPage({
       en: data.description_en,
       ru: data.description_ru,
     },
-    price: Number(data.price),
+    priceTry: Number(data.price_try ?? 0),
+    priceUsd: Number(data.price_usd ?? 0),
     image: data.image_url || "/images/menu/fettuccine.png",
     preparationMinutes: data.preparation_minutes ?? 0,
     portionCount: data.portion_count ?? 1,
@@ -91,7 +93,11 @@ export default async function EditProductPage({
 
   return (
     <>
-      <AdminHeader title={t("editTitle")} description={t("editDescription")} />
+      <AdminHeader
+        title={t("editTitle")}
+        description={t("editDescription")}
+        locale={locale as Locale}
+      />
 
       <ProductForm
         locale={locale as Locale}
