@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-gold: #C9973F;
+    --color-gold-light: #D9B15C;
+    --color-gold-dark: #9E6F22;
+    --color-cream: #F5F0E8;
+    --color-dark-bg: #0F0D09;
+    --color-dark-surface: #17130E;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-brand-cream text-dark-bg font-body antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-full bg-brand-gold px-6 py-3 text-sm font-semibold text-white shadow-gold transition hover:bg-brand-goldLight active:bg-brand-goldDark;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center rounded-full border border-brand-gold px-6 py-3 text-sm font-semibold text-brand-gold transition hover:bg-brand-gold hover:text-white;
+  }
+
+  .section-label {
+    @apply text-xs font-semibold uppercase tracking-[0.25em] text-brand-gold;
+  }
+
+  .dark-card {
+    @apply rounded-3xl border border-dark-border bg-dark-card shadow-card;
+  }
+
+  .admin-card {
+    @apply rounded-2xl border border-admin-border bg-admin-card shadow-admin;
+  }
+}
