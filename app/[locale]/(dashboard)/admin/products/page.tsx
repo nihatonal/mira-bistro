@@ -154,7 +154,7 @@ export default async function AdminProductsPage({
                               }
                               alt={name}
                               fill
-                              unoptimized={Boolean(item.image_url)}
+                              unoptimized={item.image_url?.startsWith('https://') ?? false}
                               className="object-cover"
                               sizes="80px"
                               loading="eager"
@@ -184,7 +184,7 @@ export default async function AdminProductsPage({
 
                       <td className="py-5">
                         <span className="rounded-full bg-status-active/10 px-3 py-1 text-xs font-semibold text-status-active">
-                          {item.is_active ? t("status.active") : "Inactive"}
+                          {item.is_active ? t("status.active") : t("status.inactive")}
                         </span>
                       </td>
 

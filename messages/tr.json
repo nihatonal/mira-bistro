@@ -188,7 +188,8 @@
         "actions": "İşlemler"
       },
       "status": {
-        "active": "Aktif"
+        "active": "Aktif",
+        "inactive": "Pasif"
       },
       "form": {
         "addTitle": "Ürün Ekle",
