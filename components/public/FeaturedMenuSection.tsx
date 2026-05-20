@@ -1,13 +1,13 @@
-import { getTranslations } from 'next-intl/server';
+import { getTranslations } from "next-intl/server";
 
-import { Container } from '@/components/layout/Container';
-import { Button } from '@/components/ui/Button';
-import { MenuCard } from '@/components/public/MenuCard';
-import { Reveal } from '@/components/ui/Reveal';
-import { SectionHeading } from '@/components/ui/SectionHeading';
+import { Container } from "@/components/layout/Container";
+import { Button } from "@/components/ui/Button";
+import { MenuCard } from "@/components/public/MenuCard";
+import { Reveal } from "@/components/ui/Reveal";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 
-import { type Locale } from '@/i18n';
-import { createSupabaseServerClient } from '@/lib/supabase/server';
+import { type Locale } from "@/i18n";
+import { createSupabaseServerClient } from "@/lib/supabase/server";
 
 type FeaturedMenuSectionProps = {
   locale: Locale;
@@ -18,13 +18,13 @@ export async function FeaturedMenuSection({
 }: FeaturedMenuSectionProps) {
   const t = await getTranslations({
     locale,
-    namespace: 'home.featuredMenu',
+    namespace: "home.featuredMenu",
   });
 
   const supabase = await createSupabaseServerClient();
 
   const { data: products, error } = await supabase
-    .from('products')
+    .from("products")
     .select(
       `
       id,
@@ -35,11 +35,12 @@ export async function FeaturedMenuSection({
       description_en,
       description_ru,
       image_url,
-      price
-    `
+      price_try,
+      price_usd
+    `,
     )
-    .eq('is_featured', true)
-    .eq('is_active', true)
+    .eq("is_featured", true)
+    .eq("is_active", true)
     .limit(4);
 
   if (error) {
@@ -50,26 +51,27 @@ export async function FeaturedMenuSection({
     products?.map((item) => ({
       id: item.id,
       title:
-        locale === 'tr'
+        locale === "tr"
           ? item.name_tr
-          : locale === 'en'
+          : locale === "en"
             ? item.name_en
             : item.name_ru,
       description:
-        locale === 'tr'
+        locale === "tr"
           ? item.description_tr
-          : locale === 'en'
+          : locale === "en"
             ? item.description_en
             : item.description_ru,
-      price: Number(item.price),
-      image: item.image_url || '/images/menu/fettuccine.png',
+      priceTry: Number(item.price_try ?? 0),
+      priceUsd: Number(item.price_usd ?? 0),
+      image: item.image_url || "/images/menu/fettuccine.png",
     })) ?? [];
 
   return (
     <section className="bg-brand-cream py-12 md:py-24">
       <Container>
         <Reveal>
-          <SectionHeading centered label={t('label')} title={t('title')} />
+          <SectionHeading centered label={t("label")} title={t("title")} />
         </Reveal>
 
         <Reveal delay={0.1}>
@@ -79,7 +81,7 @@ export async function FeaturedMenuSection({
                 key={item.id}
                 title={item.title}
                 description={item.description}
-                price={item.price}
+                price={locale === "tr" ? item.priceTry : item.priceUsd}
                 image={item.image}
               />
             ))}
@@ -93,7 +95,7 @@ export async function FeaturedMenuSection({
               size="md"
               className="rounded-none px-8"
             >
-              {t('cta')}
+              {t("cta")}
             </Button>
           </div>
         </Reveal>
