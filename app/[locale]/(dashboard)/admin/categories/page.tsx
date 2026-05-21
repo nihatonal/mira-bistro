@@ -57,10 +57,14 @@ export default async function AdminCategoriesPage({
 
   return (
     <>
-      <AdminHeader title={t("title")} description={t("description")}   locale={locale as Locale}/>
+      <AdminHeader
+        title={t("title")}
+        description={t("description")}
+        locale={locale as Locale}
+      />
 
       <main className="flex-1 p-6 lg:p-10">
-        <div className="admin-card p-6">
+        <div className="admin-card p-4 md:p-6">
           <div className="flex flex-col gap-4 border-b border-neutral-200 pb-6 lg:flex-row lg:items-center lg:justify-between">
             <AdminSearch
               placeholder={t("searchPlaceholder")}
@@ -70,7 +74,7 @@ export default async function AdminCategoriesPage({
 
             <Link
               href={`/${currentLocale}/admin/categories/new`}
-              className="inline-flex h-12 items-center justify-center gap-2 bg-brand-gold px-5 text-sm font-bold uppercase tracking-[0.14em] text-white shadow-gold transition hover:bg-brand-goldLight"
+              className="inline-flex h-12 w-full items-center justify-center gap-2 bg-brand-gold px-5 text-sm font-bold uppercase tracking-[0.14em] text-white shadow-gold transition hover:bg-brand-goldLight"
             >
               <Plus className="h-4 w-4" />
 
@@ -78,7 +82,7 @@ export default async function AdminCategoriesPage({
             </Link>
           </div>
 
-          <div className="mt-6 overflow-x-auto">
+          <div className="hidden mt-6 overflow-x-auto lg:block">
             <table className="w-full min-w-[760px] border-collapse">
               <thead>
                 <tr className="border-b border-neutral-200 text-left text-xs uppercase tracking-[0.16em] text-neutral-500">
@@ -174,6 +178,90 @@ export default async function AdminCategoriesPage({
                 })}
               </tbody>
             </table>
+          </div>
+          <div className="mt-6 grid gap-4 lg:hidden">
+            {categories?.map((category) => {
+              const categoryName =
+                currentLocale === "tr"
+                  ? category.name_tr
+                  : currentLocale === "en"
+                    ? category.name_en
+                    : category.name_ru;
+
+              const categoryDescription =
+                currentLocale === "tr"
+                  ? category.description_tr
+                  : currentLocale === "en"
+                    ? category.description_en
+                    : category.description_ru;
+
+              return (
+                <div
+                  key={category.id}
+                  className="border border-neutral-200 bg-white p-5 shadow-sm"
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="flex h-14 w-14 shrink-0 items-center justify-center bg-brand-gold/10 text-brand-gold">
+                      <Folder className="h-6 w-6" />
+                    </div>
+
+                    <div className="min-w-0 flex-1">
+                      <div className="flex items-start justify-between gap-3">
+                        <div>
+                          <h3 className="font-display text-2xl font-semibold text-dark-bg">
+                            {categoryName}
+                          </h3>
+
+                          <p className="mt-2 line-clamp-2 text-sm leading-6 text-neutral-500">
+                            {categoryDescription}
+                          </p>
+                        </div>
+
+                        <span
+                          className={`shrink-0 rounded-full px-3 py-1 text-xs font-semibold ${
+                            category.is_active
+                              ? "bg-status-active/10 text-status-active"
+                              : "bg-status-inactive/10 text-status-inactive"
+                          }`}
+                        >
+                          {category.is_active
+                            ? t("status.active")
+                            : t("status.inactive")}
+                        </span>
+                      </div>
+
+                      <div className="mt-5 border border-neutral-200 bg-[#FAF8F3] p-3">
+                        <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-neutral-400">
+                          {t("table.slug")}
+                        </p>
+
+                        <p className="mt-1 text-sm font-semibold text-dark-bg">
+                          {category.slug}
+                        </p>
+                      </div>
+
+                      <div className="mt-5 flex gap-2">
+                        <Link
+                          href={`/${currentLocale}/admin/categories/${category.slug}/edit`}
+                          className="flex h-11 flex-1 items-center justify-center gap-2 border border-neutral-200 bg-white text-sm font-semibold text-dark-bg transition hover:border-brand-gold hover:text-brand-gold"
+                        >
+                          <Edit className="h-4 w-4" />
+                          {t("table.actions")}
+                        </Link>
+
+                        <DeleteCategoryButton
+                          action={deleteCategoryAction.bind(
+                            null,
+                            currentLocale,
+                            category.id,
+                          )}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </main>

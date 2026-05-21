@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
 
-import { AdminSidebar } from '@/components/admin/AdminSidebar';
-import { type Locale } from '@/i18n';
-import { LanguageSwitcher } from '../language/LanguageSwitcher';
+import { AdminSidebar } from "@/components/admin/AdminSidebar";
+import { type Locale } from "@/i18n";
+import { LanguageSwitcher } from "../language/LanguageSwitcher";
 
 type AdminMobileMenuProps = {
   locale: Locale;
@@ -27,14 +27,14 @@ export function AdminMobileMenu({ locale }: AdminMobileMenuProps) {
 
       <div
         className={`fixed inset-0 z-[130] bg-black/50 backdrop-blur-sm transition lg:hidden ${
-          isOpen ? 'visible opacity-100' : 'invisible opacity-0'
+          isOpen ? "visible opacity-100" : "invisible opacity-0"
         }`}
         onClick={() => setIsOpen(false)}
       />
 
       <aside
         className={`fixed left-0 top-0 z-[140] h-screen w-[280px] transform bg-dark-surface shadow-2xl transition duration-300 lg:hidden ${
-          isOpen ? 'translate-x-0' : '-translate-x-full'
+          isOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
         <button
@@ -46,8 +46,14 @@ export function AdminMobileMenu({ locale }: AdminMobileMenuProps) {
           <X className="h-5 w-5" />
         </button>
 
-        <AdminSidebar locale={locale} mobile />
-        <LanguageSwitcher currentLocale={locale} variant="light" />
+        <AdminSidebar
+          locale={locale}
+          onNavigate={() => setIsOpen(false)}
+          mobile
+        />
+        <div className="border-t border-white/10 p-5">
+          <LanguageSwitcher currentLocale={locale} variant="light" />
+        </div>
       </aside>
     </>
   );

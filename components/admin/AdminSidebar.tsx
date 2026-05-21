@@ -18,6 +18,7 @@ import { LanguageSwitcher } from '../language/LanguageSwitcher';
 type AdminSidebarProps = {
   locale: Locale;
   mobile?: boolean;
+  onNavigate?: () => void;
 };
 
 const navItems = [
@@ -51,6 +52,7 @@ const navItems = [
 export function AdminSidebar({
   locale,
   mobile = false,
+   onNavigate,
 }: AdminSidebarProps) {
   const pathname = usePathname();
   const t = useTranslations('admin.sidebar');
@@ -63,7 +65,7 @@ export function AdminSidebar({
       )}
     >
       <div className="flex h-24 items-center border-b border-dark-border px-8">
-        <Link href={`/${locale}`}>
+        <Link href={`/${locale}`} onClick={onNavigate}>
           <div className="leading-none text-white">
             <div className="font-display text-3xl tracking-[0.18em]">
               MIRA
@@ -93,6 +95,7 @@ export function AdminSidebar({
             <Link
               key={item.key}
               href={href}
+              onClick={onNavigate}
               className={cn(
                 'group relative py-2 flex items-center gap-4 transition',
                 mobile
