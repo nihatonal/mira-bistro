@@ -65,7 +65,7 @@ export function QrExperienceSection() {
               <div className="relative overflow-hidden rounded-[28px] border border-white/10 bg-white/5 p-4 backdrop-blur">
                 <div className="relative h-[620px] w-full overflow-hidden rounded-[20px]">
                   <Image
-                    src="/images/qr-menu-display.png"
+                    src="/images/qr-menu-display.webp"
                     alt="QR Menu Display"
                     fill
                     className="object-cover"

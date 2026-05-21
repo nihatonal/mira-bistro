@@ -82,11 +82,35 @@
     "loading": "Loading..."
   },
   "footer": {
-    "tagline": "We bring together taste, quality, and a warm atmosphere.",
+    "tagline": "We combine modern gastronomy with warm atmosphere and refined presentation.",
     "quick_links": "Quick Links",
     "menu_label": "Menu",
     "contact_label": "Contact",
-    "copyright": "© 2024 Mira Bistro. All rights reserved."
+
+    "links": {
+      "home": "Home",
+      "about": "About",
+      "menu": "Menu",
+      "gallery": "Gallery",
+      "contact": "Contact"
+    },
+
+    "menu": {
+      "starters": "Starters",
+      "salads": "Salads",
+      "mains": "Main Courses",
+      "desserts": "Desserts",
+      "drinks": "Drinks"
+    },
+
+    "contact": {
+      "street": "Cumhuriyet Ave. No: 12",
+      "city": "Kadikoy / Istanbul",
+      "phone": "+90 555 123 45 67",
+      "email": "info@mirabistro.com"
+    },
+
+    "copyright": "© 2026 Mira Bistro. All rights reserved."
   },
   "productDetail": {
     "backToMenu": "Back to Menu",
@@ -294,6 +318,105 @@
         "updateTable": "Update Table"
       },
       "preview": "Preview"
+    }
+  },
+  "aboutPage": {
+    "hero": {
+      "label": "About Us",
+      "title": "Bringing Together Taste, Atmosphere and Hospitality",
+      "description": "Mira Bistro is a refined bistro experience offering modern flavors in a warm, elegant and welcoming atmosphere."
+    },
+    "story": {
+      "label": "Our Story",
+      "title": "Care in Every Plate, Elegance in Every Detail",
+      "description1": "At Mira Bistro, our goal is not only to serve food, but to create a pleasant, high-quality and memorable experience for our guests.",
+      "description2": "With fresh ingredients, balanced recipes and thoughtful presentation, we aim to maintain the same quality every day."
+    },
+    "chef": {
+      "label": "Our Kitchen Team",
+      "title": "There Is Passion Behind the Taste",
+      "description": "Our experienced kitchen team carefully prepares each plate by interpreting classic flavors with modern techniques.",
+      "feature1": "Daily preparation",
+      "feature2": "Fresh ingredients",
+      "feature3": "Thoughtful presentation"
+    },
+    "experience": {
+      "label": "Experience",
+      "title": "Not Just Food, a Complete Atmosphere",
+      "description": "With bright interiors, calm music, attentive service and a balanced menu, we offer guests a relaxed and premium setting.",
+      "ambience": "Warm Atmosphere",
+      "service": "Attentive Service",
+      "taste": "Balanced Taste"
+    },
+    "stats": {
+      "years": "Years of Experience",
+      "guests": "Happy Guests",
+      "recipes": "Signature Recipes",
+      "quality": "Quality Focus"
+    },
+    "cta": {
+      "title": "Discover the Mira Bistro Experience",
+      "description": "Explore our menu or let us reserve a special table for you.",
+      "menu": "View Menu",
+      "reservation": "Make a Reservation"
+    }
+  },
+  "galleryPage": {
+    "hero": {
+      "label": "Gallery",
+      "title": "Discover the Mira Bistro Atmosphere",
+      "description": "Selected moments reflecting the Mira Bistro experience, from our dishes to interior details."
+    },
+    "filters": {
+      "all": "All",
+      "food": "Food",
+      "interior": "Interior",
+      "ambience": "Ambience"
+    },
+    "cta": {
+      "title": "Experience It in Person",
+      "description": "We invite you to discover the warm atmosphere and signature flavors of Mira Bistro.",
+      "reservation": "Make a Reservation",
+      "menu": "View Menu"
+    }
+  },
+  "contactPage": {
+    "hero": {
+      "label": "Contact",
+      "title": "Get in Touch with Mira Bistro",
+      "description": "Contact us for reservations, events, or private dining experiences."
+    },
+    "cards": {
+      "address": {
+        "title": "Address",
+        "value": "Bagdat Avenue No:24, Istanbul"
+      },
+      "phone": {
+        "title": "Phone",
+        "value": "+90 532 000 00 00"
+      },
+      "email": {
+        "title": "Email",
+        "value": "hello@mirabistro.com"
+      }
+    },
+    "hours": {
+      "label": "Opening Hours",
+      "title": "A Special Experience Every Day",
+      "description": "Mira Bistro welcomes guests every day of the week.",
+      "weekdays": "Monday - Friday",
+      "saturday": "Saturday",
+      "sunday": "Sunday"
+    },
+    "map": {
+      "label": "Location",
+      "title": "Visit Us"
+    },
+    "cta": {
+      "title": "Your Table Awaits",
+      "description": "Reserve your table for an unforgettable evening at Mira Bistro.",
+      "reservation": "Make Reservation",
+      "menu": "View Menu"
     }
   }
 }

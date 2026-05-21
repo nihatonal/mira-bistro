@@ -12,19 +12,19 @@ const testimonials = [
     name: "Ayşe Yılmaz",
     source: "Google Yorumu",
     text: "Yemekler harikaydı, çalışanlar çok ilgiliydi. Atmosfer mükemmel, kesinlikle tekrar geleceğiz.",
-    image: "/images/testimonials/user_1.png",
+    image: "/images/testimonials/user_1.webp",
   },
   {
     name: "Mehmet Kaya",
     source: "Google Yorumu",
     text: "Mira Bistro lezzet, kalite ve hizmet konusunda beklentilerimin çok üstünde. Tavsiye ederim.",
-    image: "/images/testimonials/user_2.png",
+    image: "/images/testimonials/user_2.webp",
   },
   {
     name: "Daniel Johnson",
     source: "Google Yorumu",
     text: "QR menü sistemi çok pratik ve menü çeşitliliği çok fazla. Her şey modern, hızlı ve keyifli.",
-    image: "/images/testimonials/user_3.png",
+    image: "/images/testimonials/user_3.webp",
   },
 ];
 

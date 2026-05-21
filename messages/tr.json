@@ -84,11 +84,35 @@
     "loading": "Yükleniyor..."
   },
   "footer": {
-    "tagline": "Lezzeti, kaliteyi ve sıcak bir ortamı bir araya getiriyoruz.",
+    "tagline": "Modern gastronomi anlayışını sıcak atmosfer ve özel sunumlarla buluşturuyoruz.",
     "quick_links": "Hızlı Linkler",
     "menu_label": "Menü",
     "contact_label": "İletişim",
-    "copyright": "© 2024 Mira Bistro. Tüm hakları saklıdır."
+
+    "links": {
+      "home": "Ana Sayfa",
+      "about": "Hakkımızda",
+      "menu": "Menü",
+      "gallery": "Galeri",
+      "contact": "İletişim"
+    },
+
+    "menu": {
+      "starters": "Başlangıçlar",
+      "salads": "Salatalar",
+      "mains": "Ana Yemekler",
+      "desserts": "Tatlılar",
+      "drinks": "İçecekler"
+    },
+
+    "contact": {
+      "street": "Cumhuriyet Cad. No: 12",
+      "city": "Kadıköy / İstanbul",
+      "phone": "+90 555 123 45 67",
+      "email": "info@mirabistro.com"
+    },
+
+    "copyright": "© 2026 Mira Bistro. Tüm hakları saklıdır."
   },
   "productDetail": {
     "backToMenu": "Menüye Dön",
@@ -297,6 +321,105 @@
         "updateTable": "Masayı Güncelle"
       },
       "preview": "Önizle"
+    }
+  },
+  "aboutPage": {
+    "hero": {
+      "label": "Hakkımızda",
+      "title": "Lezzeti, Atmosferi ve Misafirperverliği Bir Araya Getiriyoruz",
+      "description": "Mira Bistro, modern dokunuşlarla hazırlanan lezzetleri sıcak, zarif ve samimi bir ortamda sunan özel bir bistro deneyimidir."
+    },
+    "story": {
+      "label": "Hikayemiz",
+      "title": "Her Tabakta Özen, Her Detayda Zarafet",
+      "description1": "Mira Bistro olarak amacımız sadece yemek sunmak değil; misafirlerimize keyifli, kaliteli ve unutulmaz bir deneyim yaşatmaktır.",
+      "description2": "Taze malzemeler, dengeli tarifler ve özenli sunum anlayışıyla her gün aynı kaliteyi korumaya çalışıyoruz."
+    },
+    "chef": {
+      "label": "Mutfak Ekibimiz",
+      "title": "Lezzetin Arkasında Tutku Var",
+      "description": "Deneyimli mutfak ekibimiz, klasik tatları modern tekniklerle yorumlayarak her tabağı özenle hazırlar.",
+      "feature1": "Günlük hazırlık",
+      "feature2": "Taze malzeme",
+      "feature3": "Özenli sunum"
+    },
+    "experience": {
+      "label": "Deneyim",
+      "title": "Sadece Yemek Değil, Bütünsel Bir Atmosfer",
+      "description": "Aydınlık dekorasyon, sakin müzik, güler yüzlü servis ve dengeli menümüzle misafirlerimize rahat ve premium bir ortam sunuyoruz.",
+      "ambience": "Sıcak Atmosfer",
+      "service": "Özenli Servis",
+      "taste": "Dengeli Lezzet"
+    },
+    "stats": {
+      "years": "Yıllık Deneyim",
+      "guests": "Mutlu Misafir",
+      "recipes": "Özel Tarif",
+      "quality": "Kalite Odağı"
+    },
+    "cta": {
+      "title": "Mira Bistro Deneyimini Keşfedin",
+      "description": "Menümüzü inceleyin veya sizin için özel bir masa ayıralım.",
+      "menu": "Menüyü İncele",
+      "reservation": "Rezervasyon Yap"
+    }
+  },
+  "galleryPage": {
+    "hero": {
+      "label": "Galeri",
+      "title": "Mira Bistro Atmosferini Keşfedin",
+      "description": "Lezzetlerimizden iç mekan detaylarına, Mira Bistro deneyimini yansıtan seçili kareler."
+    },
+    "filters": {
+      "all": "Tümü",
+      "food": "Lezzetler",
+      "interior": "İç Mekan",
+      "ambience": "Atmosfer"
+    },
+    "cta": {
+      "title": "Bu Deneyimi Yerinde Yaşayın",
+      "description": "Mira Bistro’nun sıcak atmosferini ve özel lezzetlerini keşfetmek için sizi bekliyoruz.",
+      "reservation": "Rezervasyon Yap",
+      "menu": "Menüyü İncele"
+    }
+  },
+  "contactPage": {
+    "hero": {
+      "label": "İletişim",
+      "title": "Mira Bistro ile İletişime Geçin",
+      "description": "Rezervasyon, etkinlik veya özel davetler için bizimle iletişime geçebilirsiniz."
+    },
+    "cards": {
+      "address": {
+        "title": "Adres",
+        "value": "Bağdat Caddesi No:24, İstanbul"
+      },
+      "phone": {
+        "title": "Telefon",
+        "value": "+90 532 000 00 00"
+      },
+      "email": {
+        "title": "E-Posta",
+        "value": "hello@mirabistro.com"
+      }
+    },
+    "hours": {
+      "label": "Çalışma Saatleri",
+      "title": "Her Gün Özel Bir Deneyim",
+      "description": "Mira Bistro haftanın her günü misafirlerini ağırlamaktadır.",
+      "weekdays": "Pazartesi - Cuma",
+      "saturday": "Cumartesi",
+      "sunday": "Pazar"
+    },
+    "map": {
+      "label": "Konum",
+      "title": "Bizi Ziyaret Edin"
+    },
+    "cta": {
+      "title": "Masanız Hazır",
+      "description": "Mira Bistro’da unutulmaz bir akşam için rezervasyon yapın.",
+      "reservation": "Rezervasyon Yap",
+      "menu": "Menüyü İncele"
     }
   }
 }

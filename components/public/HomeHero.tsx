@@ -15,13 +15,13 @@ export function HomeHero({ locale }: HomeHeroProps) {
       {/* Desktop background */}
       <div
         className="absolute inset-0 hidden bg-cover bg-center bg-no-repeat md:block"
-        style={{ backgroundImage: "url('/images/hero-desktop.png')" }}
+        style={{ backgroundImage: "url('/images/hero-desktop.webp')" }}
       />
 
       {/* Mobile background */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat md:hidden"
-        style={{ backgroundImage: "url('/images/hero-mobile.png')" }}
+        style={{ backgroundImage: "url('/images/hero-mobile.webp')" }}
       />
       <div className="absolute inset-0 bg-black/30" />
       <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/25 to-transparent" />

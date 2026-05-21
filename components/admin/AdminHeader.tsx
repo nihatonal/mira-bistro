@@ -4,6 +4,7 @@ import { LanguageSwitcher } from "../language/LanguageSwitcher";
 import { type Locale } from "@/i18n";
 import { LogOut } from "lucide-react";
 import { logoutAction } from "@/app/[locale]/(auth)/admin/login/actions";
+import { AdminMobileMenu } from "./AdminMobileMenu";
 type AdminHeaderProps = {
   title: string;
   description?: string;
@@ -28,7 +29,9 @@ export async function AdminHeader({
           <h1 className="text-3xl font-semibold text-dark-bg">{title}</h1>
 
           {description && (
-            <p className="mt-2 text-sm text-neutral-500">{description}</p>
+            <p className="hidden md:block mt-2 text-sm text-neutral-500">
+              {description}
+            </p>
           )}
         </div>
 
@@ -53,13 +56,13 @@ export async function AdminHeader({
               <LogOut className="h-5 w-5" />
             </button>
           </form>
-
-          <div className="flex items-center gap-3 border border-neutral-200 bg-[#FAF8F3] px-4 py-2">
+          
+          <div className="hidden md:flex items-center gap-3 border border-neutral-200 bg-[#FAF8F3] px-4 py-2">
             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-gold text-sm font-bold text-white">
               A
             </div>
 
-            <div className="hidden text-left lg:block">
+            <div className="text-left">
               <p className="text-sm font-semibold text-dark-bg">
                 {t("adminName")}
               </p>
@@ -67,6 +70,9 @@ export async function AdminHeader({
               <p className="text-xs text-neutral-500">{t("adminRole")}</p>
             </div>
           </div>
+
+          <AdminMobileMenu locale={locale as Locale} />
+          
         </div>
       </div>
     </header>

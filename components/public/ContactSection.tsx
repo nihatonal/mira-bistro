@@ -67,7 +67,7 @@ export function ContactSection() {
 
             <div className="relative min-h-[360px] lg:min-h-[520px]">
               <Image
-                src="/images/map-preview.png"
+                src="/images/map-preview.webp"
                 alt="Mira Bistro map location"
                 fill
                 className="object-cover"

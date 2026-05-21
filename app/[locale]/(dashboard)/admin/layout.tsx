@@ -30,8 +30,8 @@ export default async function AdminLayout({
   return (
     <div className="flex min-h-screen bg-admin-content">
       <AdminSidebar locale={locale as Locale} />
-
       <div className="flex min-h-screen flex-1 flex-col">{children}</div>
     </div>
   );
 }
+      

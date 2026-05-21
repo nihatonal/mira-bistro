@@ -1,18 +1,30 @@
-import Image from 'next/image';
-import { ChefHat, Heart, Leaf } from 'lucide-react';
-import { useTranslations } from 'next-intl';
+import Image from "next/image";
+import { ChefHat, Heart, Leaf } from "lucide-react";
+import { useTranslations } from "next-intl";
 
-import { Container } from '@/components/layout/Container';
-import { Reveal } from '@/components/ui/Reveal';
-import { SectionHeading } from '@/components/ui/SectionHeading';
+import { Container } from "@/components/layout/Container";
+import { Reveal } from "@/components/ui/Reveal";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export function AboutSection() {
-  const t = useTranslations('home.about');
+  const t = useTranslations("home.about");
 
   const features = [
-    { icon: Leaf, title: t('featureIngredients'), description: t('featureIngredientsDesc') },
-    { icon: ChefHat, title: t('featureChefs'), description: t('featureChefsDesc') },
-    { icon: Heart, title: t('featureGuests'), description: t('featureGuestsDesc') },
+    {
+      icon: Leaf,
+      title: t("featureIngredients"),
+      description: t("featureIngredientsDesc"),
+    },
+    {
+      icon: ChefHat,
+      title: t("featureChefs"),
+      description: t("featureChefsDesc"),
+    },
+    {
+      icon: Heart,
+      title: t("featureGuests"),
+      description: t("featureGuestsDesc"),
+    },
   ];
 
   return (
@@ -22,13 +34,24 @@ export function AboutSection() {
           <Reveal>
             <div className="overflow-hidden rounded-[6px] shadow-card">
               <div className="relative h-[360px] w-full md:h-[430px]">
-                <Image src="/images/about-restaurant.png" alt="Mira Bistro restaurant interior" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
+                <Image
+                  src="/images/about-restaurant.webp"
+                  alt="Mira Bistro restaurant interior"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  loading="eager"
+                />
               </div>
             </div>
           </Reveal>
 
           <Reveal delay={0.1}>
-            <SectionHeading label={t('label')} title={t('title')} description={t('description')} />
+            <SectionHeading
+              label={t("label")}
+              title={t("title")}
+              description={t("description")}
+            />
 
             <div className="mt-12 grid gap-8 sm:grid-cols-3">
               {features.map((feature) => {
@@ -38,8 +61,12 @@ export function AboutSection() {
                     <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full text-brand-gold">
                       <Icon className="h-8 w-8 stroke-[1.5]" />
                     </div>
-                    <h3 className="mt-4 text-base font-semibold text-dark-bg">{feature.title}</h3>
-                    <p className="mt-2 text-sm leading-6 text-neutral-600">{feature.description}</p>
+                    <h3 className="mt-4 text-base font-semibold text-dark-bg">
+                      {feature.title}
+                    </h3>
+                    <p className="mt-2 text-sm leading-6 text-neutral-600">
+                      {feature.description}
+                    </p>
                   </div>
                 );
               })}
