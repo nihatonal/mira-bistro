@@ -8,13 +8,13 @@ import {
   UtensilsCrossed,
   Tags,
   QrCode,
-  Settings,
   CalendarDays,
 } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { type Locale } from "@/i18n";
 import { LanguageSwitcher } from "../language/LanguageSwitcher";
+import { div } from "framer-motion/client";
 
 type AdminSidebarProps = {
   locale: Locale;
@@ -47,11 +47,6 @@ const navItems = [
     key: "reservations",
     href: "/admin/reservations",
     icon: CalendarDays,
-  },
-  {
-    key: "settings",
-    href: "/admin/settings",
-    icon: Settings,
   },
 ] as const;
 
@@ -133,11 +128,15 @@ export function AdminSidebar({
             </Link>
           );
         })}
+        {mobile && (
+          <div className="flex items-center justify-center">
+            <LanguageSwitcher currentLocale={locale} variant="light" />
+          </div>
+        )}
       </nav>
 
       {mobile && (
         <div className="border-t border-white/10 p-5">
-          <LanguageSwitcher currentLocale={locale} variant="light" />
           <p className="text-xs leading-6 mt-2 text-white/45">
             Mira Bistro admin yönetim paneli
           </p>
