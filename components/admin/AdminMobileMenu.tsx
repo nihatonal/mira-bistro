@@ -19,7 +19,7 @@ export function AdminMobileMenu({ locale }: AdminMobileMenuProps) {
       <button
         type="button"
         onClick={() => setIsOpen(true)}
-        className=" left-4 top-4 z-[99] flex h-11 w-11 items-center justify-center rounded-full bg-brand-gold text-white shadow-gold lg:hidden"
+        className="z-[99] flex h-11 w-11 items-center justify-center rounded-full bg-brand-gold text-white shadow-gold lg:hidden"
         aria-label="Open admin menu"
       >
         <Menu className="h-5 w-5" />

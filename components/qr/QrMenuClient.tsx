@@ -160,7 +160,7 @@ export function QrMenuClient({
             <Link
               key={item.id}
               href={`/${locale}/menu/${item.slug}?source=qr&table=${table.slug}`}
-              className="grid grid-cols-[112px_1fr] overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-card transition active:scale-[0.99] hover:shadow-cardHover"
+              className="grid min-h-[148px] grid-cols-[112px_1fr] overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-card transition active:scale-[0.99] hover:shadow-cardHover"
             >
               <div className="relative z-40 min-h-[132px]">
                 <SafeImage
@@ -176,7 +176,7 @@ export function QrMenuClient({
 
               <div className="p-4">
                 <div className="flex items-start justify-between gap-3">
-                  <h2 className="font-display text-xl font-semibold leading-tight text-dark-bg">
+                  <h2 className="line-clamp-2 font-display text-[19px] font-semibold leading-snug text-dark-bg sm:text-xl">
                     {item.name[locale]}
                   </h2>
                 </div>

@@ -219,8 +219,8 @@ export default async function AdminCategoriesPage({
 
                         <div className="min-w-0 flex-1">
                           <div className="flex items-start justify-between gap-3">
-                            <div>
-                              <h3 className="font-display text-2xl font-semibold text-dark-bg">
+                            <div className="min-w-0">
+                              <h3 className="line-clamp-2 break-words font-display text-xl font-semibold leading-snug text-dark-bg">
                                 {categoryName}
                               </h3>
 

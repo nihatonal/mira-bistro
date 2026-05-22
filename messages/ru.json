@@ -177,7 +177,7 @@
       "adminRole": "Супер админ"
     },
     "dashboard": {
-      "title": "Панель управления",
+      "title": "Dashboard",
       "description": "Добро пожаловать обратно в панель управления Mira Bistro.",
       "stats": {
         "totalProducts": "Всего продуктов",

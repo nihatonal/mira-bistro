@@ -5,6 +5,7 @@ import { type Locale } from "@/i18n";
 import { LogOut } from "lucide-react";
 import { logoutAction } from "@/app/[locale]/(auth)/admin/login/actions";
 import { AdminMobileMenu } from "./AdminMobileMenu";
+
 type AdminHeaderProps = {
   title: string;
   description?: string;
@@ -23,19 +24,21 @@ export async function AdminHeader({
   });
   const logout = logoutAction.bind(null, locale);
   return (
-    <header className="flex h-24 items-center border-b border-neutral-200 bg-white px-6 lg:px-10">
-      <div className="flex flex-1 items-center justify-between gap-6">
-        <div>
-          <h1 className="text-3xl font-semibold text-dark-bg">{title}</h1>
+    <header className="flex h-24 max-w-full items-center overflow-x-hidden border-b border-neutral-200 bg-white px-4 lg:px-10">
+      <div className="flex min-w-0 flex-1 items-center justify-between gap-3">
+        <div className="min-w-0 flex-1">
+          <h1 className="truncate text-xl line-clamp-2 font-semibold text-dark-bg md:text-3xl">
+            {title}
+          </h1>
 
           {description && (
-            <p className="hidden md:block mt-2 text-sm text-neutral-500">
+            <p className="mt-2 hidden truncate text-sm text-neutral-500 md:block">
               {description}
             </p>
           )}
         </div>
 
-        <div className="flex items-center gap-4">
+        <div className="flex shrink-0 items-center gap-2 md:gap-4">
           <div className="hidden lg:flex">
             <LanguageSwitcher currentLocale={locale} variant="light" />
           </div>
@@ -56,7 +59,7 @@ export async function AdminHeader({
               <LogOut className="h-5 w-5" />
             </button>
           </form>
-          
+
           <div className="hidden md:flex items-center gap-3 border border-neutral-200 bg-[#FAF8F3] px-4 py-2">
             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-gold text-sm font-bold text-white">
               A
@@ -72,7 +75,6 @@ export async function AdminHeader({
           </div>
 
           <AdminMobileMenu locale={locale as Locale} />
-          
         </div>
       </div>
     </header>
