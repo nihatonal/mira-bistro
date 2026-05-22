@@ -51,9 +51,6 @@ export function AdminMobileMenu({ locale }: AdminMobileMenuProps) {
           onNavigate={() => setIsOpen(false)}
           mobile
         />
-        <div className="border-t border-white/10 p-5">
-          <LanguageSwitcher currentLocale={locale} variant="light" />
-        </div>
       </aside>
     </>
   );

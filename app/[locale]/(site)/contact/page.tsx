@@ -1,12 +1,14 @@
-import { notFound } from 'next/navigation';
+import { notFound } from "next/navigation";
 
-import { locales, type Locale } from '@/i18n';
+import { locales, type Locale } from "@/i18n";
 
-import { ContactHero } from '@/components/contact/ContactHero';
-import { ContactCards } from '@/components/contact/ContactCards';
-import { WorkingHours } from '@/components/contact/WorkingHours';
-import { ContactMap } from '@/components/contact/ContactMap';
-import { ContactCta } from '@/components/contact/ContactCta';
+import { ContactHero } from "@/components/contact/ContactHero";
+import { ContactCards } from "@/components/contact/ContactCards";
+import { WorkingHours } from "@/components/contact/WorkingHours";
+import { ContactMap } from "@/components/contact/ContactMap";
+import { ContactCta } from "@/components/contact/ContactCta";
+import { createMetadata } from "@/lib/seo";
+import { getTranslations } from "next-intl/server";
 
 type ContactPageProps = {
   params: Promise<{
@@ -14,9 +16,28 @@ type ContactPageProps = {
   }>;
 };
 
-export default async function ContactPage({
+export async function generateMetadata({
   params,
-}: ContactPageProps) {
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+
+  const t = await getTranslations({
+    locale,
+    namespace: "metadata.contact",
+  });
+
+  return createMetadata({
+    locale: locale as Locale,
+    title: t("title"),
+    description: t("description"),
+    path: "/contact",
+    image: "/og/contact.webp",
+  });
+}
+
+export default async function ContactPage({ params }: ContactPageProps) {
   const { locale } = await params;
 
   if (!locales.includes(locale as Locale)) {

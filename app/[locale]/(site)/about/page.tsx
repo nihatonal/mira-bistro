@@ -7,12 +7,35 @@ import { AboutChef } from '@/components/about/AboutChef';
 import { AboutExperience } from '@/components/about/AboutExperience';
 import { AboutStats } from '@/components/about/AboutStats';
 import { AboutCta } from '@/components/about/AboutCta';
+import { createMetadata } from '@/lib/seo';
+import { getTranslations } from 'next-intl/server';
 
 type AboutPageProps = {
   params: Promise<{
     locale: string;
   }>;
 };
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+
+  const t = await getTranslations({
+    locale,
+    namespace: 'metadata.about',
+  });
+
+  return createMetadata({
+    locale: locale as Locale,
+    title: t('title'),
+    description: t('description'),
+    path: '/about',
+    image: '/og/about.webp',
+  });
+}
 
 export default async function AboutPage({
   params,

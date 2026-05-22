@@ -168,6 +168,7 @@
       "products": "Products",
       "categories": "Categories",
       "tables": "Tables & QR",
+      "reservations": "Reservations",
       "settings": "Settings"
     },
     "header": {
@@ -196,12 +197,15 @@
         "description": "QR menu performance overview."
       }
     },
-
     "products": {
       "title": "Products",
       "description": "Manage menu items, prices and categories.",
       "addProduct": "Add Product",
       "searchPlaceholder": "Search products...",
+      "empty": {
+        "title": "No products found",
+        "description": "There are no products to display yet. You can start by adding a new product."
+      },
       "table": {
         "product": "Product",
         "category": "Category",
@@ -245,6 +249,10 @@
       "listDescription": "Organize your restaurant menu by categories.",
       "addCategory": "Add Category",
       "searchPlaceholder": "Search categories...",
+      "empty": {
+        "title": "No categories found",
+        "description": "There are no categories to display yet. You can start by adding a new category."
+      },
       "status": {
         "active": "Active",
         "inactive": "Inactive"
@@ -277,10 +285,14 @@
       }
     },
     "tables": {
-      "title": "Tables & QR Codes",
+      "title": "QR Codes",
       "description": "Manage restaurant tables and QR menu access.",
       "addTable": "Add Table",
       "searchPlaceholder": "Search tables...",
+      "empty": {
+        "title": "No tables found",
+        "description": "There are no tables to display yet. You can start by adding a new table."
+      },
       "table": {
         "table": "Table",
         "capacity": "Capacity",
@@ -318,6 +330,34 @@
         "updateTable": "Update Table"
       },
       "preview": "Preview"
+    },
+    "reservations": {
+      "title": "Reservations",
+      "description": "Manage customer reservation requests.",
+      "empty": {
+        "title": "No reservations found",
+        "description": "There are no reservation requests yet."
+      },
+      "table": {
+        "guest": "Guest",
+        "date": "Date",
+        "time": "Time",
+        "people": "Guests",
+        "status": "Status",
+        "note": "Note",
+        "actions": "Actions"
+      },
+
+      "status": {
+        "pending": "Pending",
+        "confirmed": "Confirmed",
+        "cancelled": "Cancelled"
+      },
+
+      "actions": {
+        "confirm": "Confirm",
+        "cancel": "Cancel"
+      }
     }
   },
   "aboutPage": {
@@ -417,6 +457,56 @@
       "description": "Reserve your table for an unforgettable evening at Mira Bistro.",
       "reservation": "Make Reservation",
       "menu": "View Menu"
+    }
+  },
+  "reservationPage": {
+    "hero": {
+      "label": "Reservation",
+      "title": "Reserve Your Table",
+      "description": "Fill out the reservation form for a memorable Mira Bistro experience."
+    },
+    "form": {
+      "name": "Full Name",
+      "phone": "Phone",
+      "email": "Email",
+      "date": "Date",
+      "time": "Time",
+      "guestCount": "Guest Count",
+      "note": "Note",
+      "notePlaceholder": "You can write your special requests...",
+      "submit": "Send Reservation",
+      "success": "Your reservation request has been received."
+    }
+  },
+  "metadata": {
+    "home": {
+      "title": "Mira Bistro | Fine Dining Restaurant",
+      "description": "Modern gastronomy and a premium restaurant experience."
+    },
+
+    "about": {
+      "title": "About Us | Mira Bistro",
+      "description": "Discover the story and culinary philosophy of Mira Bistro."
+    },
+
+    "menu": {
+      "title": "Menu | Mira Bistro",
+      "description": "Explore our chef-crafted signature dishes."
+    },
+
+    "gallery": {
+      "title": "Gallery | Mira Bistro",
+      "description": "Discover the atmosphere of Mira Bistro."
+    },
+
+    "contact": {
+      "title": "Contact | Mira Bistro",
+      "description": "Reservation and contact information."
+    },
+
+    "reservations": {
+      "title": "Reservations | Mira Bistro",
+      "description": "Reserve your table now."
     }
   }
 }

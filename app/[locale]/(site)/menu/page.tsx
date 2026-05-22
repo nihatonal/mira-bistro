@@ -3,6 +3,8 @@ import { notFound } from "next/navigation";
 import { locales, type Locale } from "@/i18n";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
 import { MenuPageClient } from "@/components/menu/MenuPageClient";
+import { createMetadata } from "@/lib/seo";
+import { getTranslations } from "next-intl/server";
 
 type MenuPageProps = {
   params: Promise<{
@@ -11,6 +13,27 @@ type MenuPageProps = {
 };
 
 export const dynamic = "force-dynamic";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+
+  const t = await getTranslations({
+    locale,
+    namespace: "metadata.menu",
+  });
+
+  return createMetadata({
+    locale: locale as Locale,
+    title: t("title"),
+    description: t("description"),
+    path: "/menu",
+    image: "/og/menu.webp",
+  });
+}
 
 export default async function MenuPage({ params }: MenuPageProps) {
   const { locale } = await params;

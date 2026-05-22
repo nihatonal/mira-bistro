@@ -7,7 +7,6 @@
     "contact": "İletişim",
     "reservation": "Rezervasyon"
   },
-
   "home": {
     "hero": {
       "tagline": "Lezzet, Kalite, Memnuniyet",
@@ -170,6 +169,7 @@
       "products": "Ürünler",
       "categories": "Kategoriler",
       "tables": "Masalar & QR",
+      "reservations": "Rezervasyonlar",
       "settings": "Ayarlar"
     },
     "header": {
@@ -198,12 +198,15 @@
         "description": "QR menü performans özeti."
       }
     },
-
     "products": {
       "title": "Ürünler",
       "description": "Menü ürünlerini, fiyatları ve kategorileri yönetin.",
       "addProduct": "Ürün Ekle",
       "searchPlaceholder": "Ürün ara...",
+      "empty": {
+        "title": "Ürün bulunamadı",
+        "description": "Henüz gösterilecek ürün yok. Yeni ürün ekleyerek başlayabilirsiniz."
+      },
       "table": {
         "product": "Ürün",
         "category": "Kategori",
@@ -247,6 +250,10 @@
       "listDescription": "Restoran menünüzü kategorilere ayırın.",
       "addCategory": "Kategori Ekle",
       "searchPlaceholder": "Kategori ara...",
+      "empty": {
+        "title": "Kategori bulunamadı",
+        "description": "Henüz gösterilecek kategori yok. Yeni kategori ekleyerek başlayabilirsiniz."
+      },
 
       "status": {
         "active": "Aktif",
@@ -280,10 +287,14 @@
       }
     },
     "tables": {
-      "title": "Masalar & QR Kodlar",
+      "title": "QR Kodlar",
       "description": "Restoran masalarını ve QR menü erişimini yönetin.",
       "addTable": "Masa Ekle",
       "searchPlaceholder": "Masa ara...",
+      "empty": {
+        "title": "Masa bulunamadı",
+        "description": "Henüz gösterilecek masa yok. Yeni masa ekleyerek başlayabilirsiniz."
+      },
       "table": {
         "table": "Masa",
         "capacity": "Kapasite",
@@ -321,6 +332,36 @@
         "updateTable": "Masayı Güncelle"
       },
       "preview": "Önizle"
+    },
+    "reservations": {
+      "title": "Rezervasyonlar",
+      "description": "Müşteri rezervasyon taleplerini yönetin.",
+      "empty": {
+        "title": "Rezervasyon bulunamadı",
+        "description": "Henüz gelen rezervasyon talebi yok."
+      },
+      "table": {
+        "guest": "Misafir",
+        "date": "Tarih",
+        "time": "Saat",
+        "people": "Kişi",
+        "status": "Durum",
+        "note": "Not",
+        "actions": "İşlem"
+      },
+      "status": {
+        "pending": "Bekliyor",
+        "confirmed": "Onaylandı",
+        "cancelled": "İptal"
+      },
+      "actions": {
+        "confirm": "Onayla",
+        "cancel": "İptal Et"
+      }
+    },
+    "empty": {
+      "title": "Kayıt bulunamadı",
+      "description": "Henüz gösterilecek bir kayıt yok."
     }
   },
   "aboutPage": {
@@ -420,6 +461,56 @@
       "description": "Mira Bistro’da unutulmaz bir akşam için rezervasyon yapın.",
       "reservation": "Rezervasyon Yap",
       "menu": "Menüyü İncele"
+    }
+  },
+  "reservationPage": {
+    "hero": {
+      "label": "Rezervasyon",
+      "title": "Masanızı Ayırtın",
+      "description": "Mira Bistro’da keyifli bir deneyim için rezervasyon formunu doldurun."
+    },
+    "form": {
+      "name": "Ad Soyad",
+      "phone": "Telefon",
+      "email": "E-posta",
+      "date": "Tarih",
+      "time": "Saat",
+      "guestCount": "Kişi Sayısı",
+      "note": "Not",
+      "notePlaceholder": "Özel isteklerinizi yazabilirsiniz...",
+      "submit": "Rezervasyon Gönder",
+      "success": "Rezervasyon talebiniz alındı."
+    }
+  },
+  "metadata": {
+    "home": {
+      "title": "Mira Bistro | Fine Dining Restaurant",
+      "description": "Modern gastronomi ve premium restoran deneyimi."
+    },
+
+    "about": {
+      "title": "Hakkımızda | Mira Bistro",
+      "description": "Mira Bistro hikayesi ve mutfak anlayışı."
+    },
+
+    "menu": {
+      "title": "Menü | Mira Bistro",
+      "description": "Şef imzalı özel lezzetleri keşfedin."
+    },
+
+    "gallery": {
+      "title": "Galeri | Mira Bistro",
+      "description": "Mira Bistro atmosferini keşfedin."
+    },
+
+    "contact": {
+      "title": "İletişim | Mira Bistro",
+      "description": "Rezervasyon ve iletişim bilgileri."
+    },
+
+    "reservations": {
+      "title": "Rezervasyon | Mira Bistro",
+      "description": "Masanızı hemen ayırtın."
     }
   }
 }

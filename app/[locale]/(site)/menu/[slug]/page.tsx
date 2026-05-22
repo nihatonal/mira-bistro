@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ArrowLeft, Clock, Leaf, Users } from 'lucide-react';
@@ -15,6 +14,7 @@ import {
   formatPreparationTime,
   formatPortion,
 } from '@/lib/formatters';
+import { SafeImage } from '@/components/ui/SafeImage';
 
 type ProductDetailPageProps = {
   params: Promise<{
@@ -201,7 +201,7 @@ export default async function ProductDetailPage({
           <Reveal>
             <div className="overflow-hidden border border-neutral-200 bg-white shadow-card">
               <div className="relative h-[420px] w-full md:h-[620px]">
-                <Image
+                <SafeImage
                   src={item.image}
                   alt={item.name}
                   fill
@@ -329,7 +329,7 @@ export default async function ProductDetailPage({
                     className="group overflow-hidden border border-neutral-200 bg-white transition duration-300 hover:-translate-y-1 hover:shadow-cardHover"
                   >
                     <div className="relative h-64 w-full overflow-hidden">
-                      <Image
+                      <SafeImage
                         src={related.image}
                         alt={related.name}
                         fill

@@ -168,6 +168,7 @@
       "products": "Продукты",
       "categories": "Категории",
       "tables": "Столы и QR",
+      "reservations": "Бронирования",
       "settings": "Настройки"
     },
     "header": {
@@ -201,6 +202,10 @@
       "description": "Управление меню, ценами и категориями.",
       "addProduct": "Добавить продукт",
       "searchPlaceholder": "Поиск продуктов...",
+      "empty": {
+        "title": "Товары не найдены",
+        "description": "Пока нет товаров для отображения. Начните с добавления нового товара."
+      },
       "table": {
         "product": "Продукт",
         "category": "Категория",
@@ -244,6 +249,10 @@
       "listDescription": "Организуйте меню ресторана по категориям.",
       "addCategory": "Добавить категорию",
       "searchPlaceholder": "Поиск категорий...",
+      "empty": {
+        "title": "Категории не найдены",
+        "description": "Пока нет категорий для отображения. Начните с добавления новой категории."
+      },
       "status": {
         "active": "Активно",
         "inactive": "Неактивно"
@@ -276,10 +285,14 @@
       }
     },
     "tables": {
-      "title": "Столы и QR-коды",
+      "title": "QR-коды",
       "description": "Управление столами ресторана и доступом к QR-меню.",
       "addTable": "Добавить стол",
       "searchPlaceholder": "Поиск столов...",
+      "empty": {
+        "title": "Столы не найдены",
+        "description": "Пока нет столов для отображения. Начните с добавления нового стола."
+      },
       "table": {
         "table": "Стол",
         "capacity": "Вместимость",
@@ -317,6 +330,34 @@
         "updateTable": "Обновить стол"
       },
       "preview": "Предпросмотр"
+    },
+    "reservations": {
+      "title": "Бронирования",
+      "description": "Управляйте запросами на бронирование.",
+      "empty": {
+        "title": "Бронирования не найдены",
+        "description": "Пока нет запросов на бронирование."
+      },
+      "table": {
+        "guest": "Гость",
+        "date": "Дата",
+        "time": "Время",
+        "people": "Гости",
+        "status": "Статус",
+        "note": "Примечание",
+        "actions": "Действия"
+      },
+
+      "status": {
+        "pending": "Ожидает",
+        "confirmed": "Подтверждено",
+        "cancelled": "Отменено"
+      },
+
+      "actions": {
+        "confirm": "Подтвердить",
+        "cancel": "Отменить"
+      }
     }
   },
   "aboutPage": {
@@ -416,6 +457,56 @@
       "description": "Забронируйте стол для незабываемого вечера в Mira Bistro.",
       "reservation": "Забронировать",
       "menu": "Посмотреть меню"
+    }
+  },
+  "reservationPage": {
+    "hero": {
+      "label": "Бронирование",
+      "title": "Забронируйте стол",
+      "description": "Заполните форму бронирования для приятного опыта в Mira Bistro."
+    },
+    "form": {
+      "name": "Имя и фамилия",
+      "phone": "Телефон",
+      "email": "Эл. почта",
+      "date": "Дата",
+      "time": "Время",
+      "guestCount": "Количество гостей",
+      "note": "Примечание",
+      "notePlaceholder": "Вы можете указать особые пожелания...",
+      "submit": "Отправить бронь",
+      "success": "Ваш запрос на бронирование получен."
+    }
+  },
+  "metadata": {
+    "home": {
+      "title": "Mira Bistro | Fine Dining Restaurant",
+      "description": "Modern gastronomy and a premium restaurant experience."
+    },
+
+    "about": {
+      "title": "About Us | Mira Bistro",
+      "description": "Discover the story and culinary philosophy of Mira Bistro."
+    },
+
+    "menu": {
+      "title": "Menu | Mira Bistro",
+      "description": "Explore our chef-crafted signature dishes."
+    },
+
+    "gallery": {
+      "title": "Gallery | Mira Bistro",
+      "description": "Discover the atmosphere of Mira Bistro."
+    },
+
+    "contact": {
+      "title": "Contact | Mira Bistro",
+      "description": "Reservation and contact information."
+    },
+
+    "reservations": {
+      "title": "Reservations | Mira Bistro",
+      "description": "Reserve your table now."
     }
   }
 }

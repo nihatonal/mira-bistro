@@ -1,4 +1,4 @@
-import Image from 'next/image';
+
 import Link from 'next/link';
 import { Clock } from 'lucide-react';
 
@@ -8,6 +8,7 @@ import {
   formatPreparationTime,
   formatPortion,
 } from '@/lib/formatters';
+import { SafeImage } from '../ui/SafeImage';
 
 type MenuProduct = {
   id: string;
@@ -40,7 +41,7 @@ export function MenuItemCard({
       className="group grid overflow-hidden border border-neutral-200 bg-white shadow-card transition duration-300 hover:-translate-y-1 hover:shadow-cardHover md:grid-cols-[260px_1fr]"
     >
       <div className="relative min-h-[260px] overflow-hidden">
-        <Image
+        <SafeImage
           src={item.image}
           alt={item.name[locale]}
           fill

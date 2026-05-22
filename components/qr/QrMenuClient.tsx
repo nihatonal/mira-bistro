@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { Clock, Users } from "lucide-react";
 import { useTranslations } from "next-intl";
@@ -12,6 +11,7 @@ import { type Locale } from "@/i18n";
 import { type RestaurantTable } from "@/data/tables";
 import { formatCurrency } from "@/lib/utils";
 import { LanguageSwitcher } from "../language/LanguageSwitcher";
+import { SafeImage } from "../ui/SafeImage";
 
 type QrProduct = {
   id: string;
@@ -163,7 +163,7 @@ export function QrMenuClient({
               className="grid grid-cols-[112px_1fr] overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-card transition active:scale-[0.99] hover:shadow-cardHover"
             >
               <div className="relative min-h-[132px]">
-                <Image
+                <SafeImage
                   src={item.image}
                   alt={item.name[locale]}
                   fill
