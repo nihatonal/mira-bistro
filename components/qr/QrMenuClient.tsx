@@ -71,7 +71,7 @@ export function QrMenuClient({
   return (
     <main className="min-h-screen bg-[#FBF8F1] pb-24">
       <section
-        className={`sticky top-0 z-80 border-b border-white/10 bg-dark-bg text-white shadow-lg transition-all duration-300 ${
+        className={`sticky top-0 z-[99] border-b border-white/10 bg-dark-bg text-white shadow-lg transition-all duration-300 ${
           isScrolled ? "px-5 py-3" : "px-5 py-4"
         }`}
       >
@@ -126,7 +126,7 @@ export function QrMenuClient({
         </div> */}
 
         <div
-          className={`sticky z-60 -mx-5 mt-0 border-y border-neutral-200 bg-[#FBF8F1]/95 px-5 pt-3 backdrop-blur transition-all duration-300 ${
+          className={`sticky z-[99] -mx-5 mt-0 border-y border-neutral-200 bg-[#FBF8F1]/95 px-5 pt-3 backdrop-blur transition-all duration-300 ${
             isScrolled ? "top-[58px]" : "top-[66px]"
           }`}
         >
@@ -162,13 +162,13 @@ export function QrMenuClient({
               href={`/${locale}/menu/${item.slug}?source=qr&table=${table.slug}`}
               className="grid grid-cols-[112px_1fr] overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-card transition active:scale-[0.99] hover:shadow-cardHover"
             >
-              <div className="relative min-h-[132px]">
+              <div className="relative z-40 min-h-[132px]">
                 <SafeImage
                   src={item.image}
                   alt={item.name[locale]}
                   fill
                   unoptimized={item.image.startsWith("https://")}
-                  className="object-cover"
+                  className="object-cover relative z-20"
                   sizes="112px"
                   loading="eager"
                 />
