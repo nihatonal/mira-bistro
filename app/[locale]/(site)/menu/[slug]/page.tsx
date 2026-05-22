@@ -185,7 +185,7 @@ export default async function ProductDetailPage({
     : `/${currentLocale}/menu`;
 
   return (
-    <main className="min-h-screen bg-[#FBF8F1] pb-24 pt-12">
+    <main className="min-h-screen bg-[#FBF8F1] pb-24 pt-28">
       <Container>
         <Reveal>
           <Link
@@ -197,7 +197,7 @@ export default async function ProductDetailPage({
           </Link>
         </Reveal>
 
-        <section className="mt-10 grid gap-12 lg:grid-cols-[1.05fr_0.95fr]">
+        <section className="mt-4 grid gap-12 lg:grid-cols-[1.05fr_0.95fr]">
           <Reveal>
             <div className="overflow-hidden border border-neutral-200 bg-white shadow-card">
               <div className="relative h-[420px] w-full md:h-[620px]">

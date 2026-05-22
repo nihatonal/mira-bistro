@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { Clock, Users } from "lucide-react";
+import { Clock } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 import { formatPreparationTime, formatPortion } from "@/lib/formatters";
@@ -71,7 +71,7 @@ export function QrMenuClient({
   return (
     <main className="min-h-screen bg-[#FBF8F1] pb-24">
       <section
-        className={`sticky top-0 z-40 border-b border-white/10 bg-dark-bg text-white shadow-lg transition-all duration-300 ${
+        className={`sticky top-0 z-80 border-b border-white/10 bg-dark-bg text-white shadow-lg transition-all duration-300 ${
           isScrolled ? "px-5 py-3" : "px-5 py-4"
         }`}
       >
@@ -85,31 +85,31 @@ export function QrMenuClient({
               Mira Bistro
             </p>
 
-            <h1
+            {/* <h1
               className={`mt-1 font-display font-semibold transition-all duration-300 ${
                 isScrolled ? "text-xl" : "text-[24px]"
               }`}
             >
               QR Menü
-            </h1>
+            </h1> */}
           </div>
 
           <div className="flex items-center gap-3">
             <LanguageSwitcher currentLocale={locale} variant="dark" />
 
-            <div
+            {/* <div
               className={`rounded-full border border-brand-gold/40 text-brand-gold transition-all duration-300 ${
                 isScrolled ? "px-3 py-1 text-xs" : "px-3.5 py-1.5 text-xs"
               }`}
             >
               {table.label}
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-3xl px-5 pt-8">
-        <div className="rounded-2xl border border-neutral-200 bg-white p-5 shadow-card">
+      <section className="mx-auto max-w-3xl px-5">
+        {/* <div className="rounded-2xl border border-neutral-200 bg-white p-5 shadow-card">
           <p className="text-sm leading-7 text-neutral-600">
             Menümüzü inceleyebilir, beğendiğiniz ürünleri garsonumuza
             iletebilirsiniz.
@@ -123,14 +123,14 @@ export function QrMenuClient({
 
             <span>Servis aktif</span>
           </div>
-        </div>
+        </div> */}
 
         <div
-          className={`sticky z-30 -mx-5 mt-8 border-y border-neutral-200 bg-[#FBF8F1]/95 px-5 py-3 backdrop-blur transition-all duration-300 ${
-            isScrolled ? "top-[73px]" : "top-[108px]"
+          className={`sticky z-60 -mx-5 mt-0 border-y border-neutral-200 bg-[#FBF8F1]/95 px-5 pt-3 backdrop-blur transition-all duration-300 ${
+            isScrolled ? "top-[58px]" : "top-[66px]"
           }`}
         >
-          <div className="flex gap-3 overflow-x-auto pb-4 md:pb-2">
+          <div className="flex gap-3 overflow-x-auto pb-3 md:pb-2">
             {[
               {
                 id: "all",
@@ -143,7 +143,7 @@ export function QrMenuClient({
                 key={category.slug}
                 type="button"
                 onClick={() => setActiveCategory(category.slug)}
-                className={`shrink-0 rounded-full px-5 py-2 text-xs font-bold uppercase tracking-[0.14em] transition ${
+                className={`relative z-[70] shrink-0 rounded-full px-5 py-2 text-xs font-bold uppercase tracking-[0.14em] transition ${
                   activeCategory === category.slug
                     ? "bg-brand-gold text-white"
                     : "border border-neutral-300 bg-white text-neutral-700"
